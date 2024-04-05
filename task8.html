@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body style="margin: 0">
+  <!-- Write your code below -->
+   <form onsubmit="saveToLocal(event)">
+  <label for="uname">User Name</label>
+  <input type="text" name="username" id="uname" required>
+  <label for="mail">Email</label>
+  <input type="email" name="email" id="mail" required>
+  <label for="number">Phone Number</label>
+  <input type="tel" name="phone" id="number">
+  <button type="submit">Submit</button>
+</form>
+  
+</body>
+<script>
+    function saveToLocal(event)
+{     
+      event.preventDefault();
+      const name = event.target.username.value;
+      const email = event.target.email.value;
+      const phone = event.target.phone.value;
+
+      localStorage.setItem('Username',name);
+      localStorage.setItem('Email',email);
+      localStorage.setItem('Phone',phone);
+
+      
+}
+
+</script>
+
+</html>
